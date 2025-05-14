@@ -1,6 +1,6 @@
 import streamlit as st
 from sqlalchemy.orm import sessionmaker
-from crear_base import Saludo
+from crear_base import Saludo2
 from configuracion import engine
 
 # Crear sesión
@@ -8,7 +8,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Consultar saludos
-saludos = session.query(Saludo).order_by(Saludo.id).all()
+saludos = session.query(Saludo2).order_by(Saludo2.id).all()
 
 # Mostrar con Streamlit
 st.title("Listado de Saludos")
