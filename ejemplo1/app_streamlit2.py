@@ -23,6 +23,10 @@ for saludo in saludos:
 # Presentación en tabla
 st.title("Tabla de Saludos")
 
-lista = [{"ID": s.id, "Mensaje": s.mensaje, "Tipo": s.tipo, "Origen": s.origen} for s in saludos]
+lista = []
+
+for s in saludos:
+    diccionario = {"ID": s.id, "Mensaje": s.mensaje, "Tipo": s.tipo, "Origen": s.origen}
+    lista.append(diccionario)
 
 st.dataframe(lista)
